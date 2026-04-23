@@ -4,7 +4,24 @@ using System.Text;
 
 namespace ClassLibPizza.Model
 {
-	internal class Pizza
+	public class Pizza
 	{
+
+		#region instance fields
+
+
+		#endregion
+
+		#region constructors
+
+		#endregion
+
+		#region properties
+
+		#endregion
+
+		#region methods()
+
+		#endregion
 	}
 }
