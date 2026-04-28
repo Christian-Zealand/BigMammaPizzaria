@@ -34,9 +34,6 @@ namespace ClassLibPizza.Model
 			}
 			return res;
 		}
-
-
-
 		public void AddPizza(Pizza pizza)
 		{
 			_pizzas.Add(pizza);

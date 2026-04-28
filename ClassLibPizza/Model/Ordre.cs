@@ -47,5 +47,11 @@ namespace ClassLibPizza.Model
 		set { _pizzaList =value; }
 		}
 
+		//methods
+
+		public override string ToString()
+		{
+			return "OdreNo= " + OrdreNo + " Date= " + Date + " Total price= " + TPrice;
+		}
 	}
 }
