@@ -43,7 +43,6 @@ namespace ClassLibPizza.Model
 			_gluten = gluten;
 			_ingrediens = ingrediens;
 			_delivery = delivery;
-			
 		}
 		#endregion
 
@@ -51,7 +50,12 @@ namespace ClassLibPizza.Model
 		public int PizzaNo
 		{
 			get { return _pizzaNo; }
-			set { _pizzaNo = value; }
+			set {
+				if (0 > value )
+				{
+					throw new ArgumentException("number must be above one");
+				}
+				_pizzaNo = value; }
 		}
 		public string Name
 		{
@@ -61,7 +65,13 @@ namespace ClassLibPizza.Model
 		public double Price
 		{
 			get { return _price; }
-			set { _price = value; }
+			set {
+				if (0>value)
+				{
+					throw new ArgumentException("Price must be above 0");
+				}
+
+				_price = value; }
 		}
 		public bool Vegan
 		{
