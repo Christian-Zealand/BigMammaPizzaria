@@ -4,7 +4,8 @@ using System.Text;
 
 namespace ClassLibPizza.Model
 {
-	internal class OrdreListe
+	public class OrdreListe
 	{
+
 	}
 }
