@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="BigMammaPizzaApp/BigMammaPizzaApp.csproj" Id="a23c4274-a883-409b-96fd-12e9eb74f5ba" />
   <Project Path="ClassLibPizza/ClassLibPizza.csproj" />
 </Solution>
