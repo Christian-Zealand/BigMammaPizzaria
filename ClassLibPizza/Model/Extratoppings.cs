@@ -10,11 +10,15 @@ namespace ClassLibPizza.Model
 
 
 	{
+		#region  Instancefields
 		//Instancefields
 		private int _extraToppingId;
 		private string _extraToppingName;
 		private double _extraToppingPrice;
 
+		#endregion
+
+		#region Constructors
 		//Constructor
 
 		public Extratoppings()
@@ -32,6 +36,10 @@ namespace ClassLibPizza.Model
 			_extraToppingPrice = extraToppingPrice;
 
 		}
+
+		#endregion
+
+		#region Properties
 		//Properties
 
 		public int ExtraToppingId
@@ -50,13 +58,16 @@ namespace ClassLibPizza.Model
 			set { _extraToppingPrice = value; }
 		}
 
+		#endregion
+
+		#region Methods
 		//ToString:
 		public override string ToString()
 		{
 			return " Topping ID: " + ExtraToppingId + "Topping: " + ExtraToppingName + "Price: " + ExtraToppingPrice;
 		}
 
-
+		#endregion
 
 
 	}

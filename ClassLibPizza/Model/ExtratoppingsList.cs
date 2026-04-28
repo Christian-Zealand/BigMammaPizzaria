@@ -8,9 +8,12 @@ namespace ClassLibPizza.Model
 
 
 	{
+		#region Instancefields
 		//Instancefields
 		private List<Extratoppings> _extratoppingsList;
+		#endregion
 
+		#region Constructors
 		//Constructor
 		public ExtratoppingsList()
 		{
@@ -21,14 +24,18 @@ namespace ClassLibPizza.Model
 		{
 			_extratoppingsList = extratoppingsList;
 		}
+		#endregion
 
+		#region Properties
 		//Properties
 		public List<Extratoppings> Extratoppings
 		{
 			get { return _extratoppingsList; }
 			set { _extratoppingsList = value; }
 		}
+		#endregion
 
+		#region Methods
 		//ToString:
 
 		public override string ToString()
@@ -92,7 +99,7 @@ namespace ClassLibPizza.Model
 			return updateExtratoppings;
 
 		}
-
+		#endregion
 	}
 }
 
