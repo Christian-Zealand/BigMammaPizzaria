@@ -16,7 +16,7 @@ namespace ClassLibPizza.Model
 		private bool _gluten;
 		private string _ingrediens;
 		private bool _delivery;
-
+		private List<Topping> _toppings;
 		#endregion
 
 		#region constructors
@@ -30,9 +30,10 @@ namespace ClassLibPizza.Model
 			_gluten = false;
 			_ingrediens = "dummy";
 			_delivery = false;
+			_toppings = new List<Topping>();
 		}
 
-		public Pizza (int pizzaNo, string name, double price, bool vegan, bool calzone, bool gluten, string ingrediens, bool delivery)
+		public Pizza (int pizzaNo, string name, double price, bool vegan, bool calzone, bool gluten, string ingrediens, bool delivery, List<Topping> toppings)
 		{
 			_pizzaNo = pizzaNo;
 			_name = name;
@@ -42,6 +43,7 @@ namespace ClassLibPizza.Model
 			_gluten = gluten;
 			_ingrediens = ingrediens;
 			_delivery = delivery;
+			_toppings = toppings;
 		}
 		#endregion
 
@@ -88,12 +90,17 @@ namespace ClassLibPizza.Model
 			get { return _delivery; }
 			set { _delivery = value; }
 		}
+		public List<Topping> Toppings
+		{
+			get { return _toppings; }
+			set { _toppings = value; }
+		}
 		#endregion
 
 		#region methods()
 		public override string ToString()
 		{
-			return "PizzaNo= " + PizzaNo + " Name= " + Name + " Price= " + Price + " Vegan= " + Vegan + " Calzone= " + Calzone + " Gluten= " + Gluten + " Ingridiens= " + Ingrediens + " Delivery= " + Delivery;
+			return "PizzaNo= " + PizzaNo + " Name= " + Name + " Price= " + Price + " Vegan= " + Vegan + " Calzone= " + Calzone + " Gluten= " + Gluten + " Ingridiens= " + Ingrediens + " Delivery= " + Delivery + " Toppings= " + Toppings;
 		}
 		#endregion
 	}

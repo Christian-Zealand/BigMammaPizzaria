@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassLibPizza.Model
 {
-	internal class Toppings
+	public class Topping
 	{
 	}
 }

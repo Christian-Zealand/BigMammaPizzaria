@@ -68,6 +68,12 @@ namespace ClassLibPizza.Model
 			return PizzaToUpdate;
 		}
 
+		public Pizza DeletePizza (int id)
+		{
+			Pizza pizzaToDelete = GetPizza(id);
+			_pizzas.Remove(pizzaToDelete);
+			return pizzaToDelete;
+		}
 
 		#endregion
 	}
