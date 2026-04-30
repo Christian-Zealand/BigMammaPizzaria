@@ -20,6 +20,7 @@ namespace ClassLibPizza.Model
 		#endregion
 
 		#region constructors
+
 		public Pizza()
 		{
 			_pizzaNo = 0;

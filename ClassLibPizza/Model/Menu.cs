@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 
 namespace ClassLibPizza.Model
 {
@@ -24,7 +25,6 @@ namespace ClassLibPizza.Model
 		}
 
 		#region Methods
-
 		public override string ToString()
 		{
 			string res = " ";
@@ -71,7 +71,37 @@ namespace ClassLibPizza.Model
 			_pizzas.Remove(pizzaToDelete);
 			return pizzaToDelete;
 		}
-
 		#endregion
+
+		public void LoadToFile()
+		{
+			try
+			{
+				StreamReader sr = new StreamReader(@"C:\Users\Christian\source\repos\TestAfJson\PizzaTest.txt");
+				string jsonStr = sr.ReadToEnd();
+				sr.Close();
+				List<Pizza> pizzas = JsonSerializer.Deserialize<List<Pizza>>(jsonStr);
+				_pizzas = pizzas;
+			} 
+			catch (Exception ex) 
+				{
+				Console.WriteLine("kan ikk læs fi´l");
+				_pizzas = new List<Pizza>();
+			}
+			{ 
+
+
+			}
+		}
+
+		public void SafeToFile()
+		{
+			string jsonStr = JsonSerializer.Serialize(_pizzas);
+			StreamWriter sw = new StreamWriter(@"C:\Users\Christian\source\repos\TestAfJson\PizzaTest.txt");
+			sw.WriteLine(jsonStr);
+			sw.Close();
+		}
+
+
 	}
 }
