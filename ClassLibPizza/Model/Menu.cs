@@ -12,10 +12,12 @@ namespace ClassLibPizza.Model
 		public Menu()
 		{
 		_pizzas = new List<Pizza>();
+			LoadToFile();
 		}
 		public Menu(List<Pizza> pizzas) 
 		{
 		_pizzas = pizzas;
+			LoadToFile();
 		}
 
 		public List<Pizza> Pizzas
@@ -37,6 +39,7 @@ namespace ClassLibPizza.Model
 		public void AddPizza(Pizza pizza)
 		{
 			_pizzas.Add(pizza);
+			SafeToFile();
 		}
 
 		public Pizza GetPizza(int id)
@@ -61,7 +64,7 @@ namespace ClassLibPizza.Model
 			PizzaToUpdate.Calzone = updatedPizza.Calzone;
 			PizzaToUpdate.Gluten = updatedPizza.Gluten;
 			PizzaToUpdate.Ingrediens = updatedPizza.Ingrediens;
-
+			SafeToFile();
 			return PizzaToUpdate;
 		}
 
@@ -69,6 +72,7 @@ namespace ClassLibPizza.Model
 		{
 			Pizza pizzaToDelete = GetPizza(id);
 			_pizzas.Remove(pizzaToDelete);
+			SafeToFile();
 			return pizzaToDelete;
 		}
 		#endregion

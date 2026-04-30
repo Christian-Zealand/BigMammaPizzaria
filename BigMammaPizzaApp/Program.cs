@@ -53,3 +53,11 @@ Console.WriteLine(pizzavegan);
 Console.WriteLine(pizzamagaritha);
 
 Console.WriteLine(pizzavegan.Totalprice());
+
+Menu m = new Menu();
+//m.AddPizza(pizzamagaritha);
+//m.AddPizza(pizzavegan);
+//m.AddPizza(pizzavesuv);
+//m.AddPizza(pizzaha);
+
+Console.WriteLine(m);
