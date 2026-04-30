@@ -21,3 +21,29 @@ Pizza pizzasole = new Pizza(15, "sole", 190, false, false, false, "tomato, chees
 Pizza pizzabigmama = new Pizza(16, "big mama", 200, false, false, false, "tomato, cheese, pepperoni, ham, pineapple, tuna, anchovies", true);
 Pizza pizzashrimp = new Pizza(17, "shrimp", 210, false, false, false, "tomato, cheese, shrimp", true);
 Pizza pizzaoyster = new Pizza(18, "oyster", 220, false, false, false, "tomato, cheese, oyster", true);
+
+List<Pizza> PizzaMenu = new List<Pizza>();
+PizzaMenu.Add(pizzamagaritha);
+PizzaMenu.Add(pizzavegan);
+PizzaMenu.Add(pizzavesuv);
+PizzaMenu.Add(pizzacalzone);
+PizzaMenu.Add(pizzagluten);
+PizzaMenu.Add(pizzaveganCalzone);
+PizzaMenu.Add(pizzanegro);
+PizzaMenu.Add(pizzaveganNegro);
+PizzaMenu.Add(pizzaveganGluten);
+PizzaMenu.Add(pizzahawaii);
+PizzaMenu.Add(pizzalava);
+PizzaMenu.Add(pizzaha);
+PizzaMenu.Add(pizzatonno);
+PizzaMenu.Add(pizzaromana);
+PizzaMenu.Add(pizzasole);
+PizzaMenu.Add(pizzabigmama);
+PizzaMenu.Add(pizzashrimp);
+PizzaMenu.Add(pizzaoyster);
+
+foreach (var pizza in PizzaMenu)
+{
+	Console.WriteLine(pizza);
+}
+

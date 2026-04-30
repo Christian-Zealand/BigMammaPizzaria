@@ -16,10 +16,11 @@ namespace ClassLibPizza.Model
 		private bool _gluten;
 		private string _ingrediens;
 		private bool _delivery;
-		private List<Topping> _toppings;
+		private ExtratoppingsList _extratoppingsList;
 		#endregion
 
 		#region constructors
+
 		public Pizza()
 		{
 			_pizzaNo = 0;
