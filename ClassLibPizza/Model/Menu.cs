@@ -77,7 +77,7 @@ namespace ClassLibPizza.Model
 		{
 			try
 			{
-				StreamReader sr = new StreamReader(@"C:\Users\Christian\source\repos\TestAfJson\PizzaTest.txt");
+				StreamReader sr = new StreamReader(@"C:\Users\Christian\source\repos\BigMammaPizzaria\Json\bigmammapizzaria.txt");
 				string jsonStr = sr.ReadToEnd();
 				sr.Close();
 				List<Pizza> pizzas = JsonSerializer.Deserialize<List<Pizza>>(jsonStr);
@@ -97,7 +97,7 @@ namespace ClassLibPizza.Model
 		public void SafeToFile()
 		{
 			string jsonStr = JsonSerializer.Serialize(_pizzas);
-			StreamWriter sw = new StreamWriter(@"C:\Users\Christian\source\repos\TestAfJson\PizzaTest.txt");
+			StreamWriter sw = new StreamWriter(@"C:\Users\Christian\source\repos\BigMammaPizzaria\Json\bigmammapizzaria.txt");
 			sw.WriteLine(jsonStr);
 			sw.Close();
 		}

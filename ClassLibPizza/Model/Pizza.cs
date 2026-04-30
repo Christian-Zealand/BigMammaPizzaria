@@ -167,7 +167,8 @@ namespace ClassLibPizza.Model
 			{
 				str += t.ToString();
 			}
-			return "PizzaNo= " + PizzaNo + " Name= " + Name + " Price= " + Price + " Vegan= " + Vegan + " Calzone= " + Calzone + " Gluten= " + Gluten + " Ingridiens= " + Ingrediens + " Delivery= " + Delivery + " Extra toppings= " + str;
+			return "PizzaNo= " + PizzaNo + " Name= " + Name + " Price= " + Price + " Vegan= " + Vegan + " Calzone= " + Calzone
+			+ " Gluten= " + Gluten + " Ingridiens= " + Ingrediens + " Delivery= " + Delivery + " Extra toppings= " + str;
 		}
 		#endregion
 	}
