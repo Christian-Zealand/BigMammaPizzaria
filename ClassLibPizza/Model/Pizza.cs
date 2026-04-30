@@ -16,7 +16,7 @@ namespace ClassLibPizza.Model
 		private bool _gluten;
 		private string _ingrediens;
 		private bool _delivery;
-		private List<Topping> _toppings;
+		private List<Extratopping> _extraToppings;
 		#endregion
 
 		#region constructors
@@ -30,10 +30,11 @@ namespace ClassLibPizza.Model
 			_gluten = false;
 			_ingrediens = "dummy";
 			_delivery = false;
+			_extraToppings = new List<Extratopping>();
 			
 		}
 
-		public Pizza (int pizzaNo, string name, double price, bool vegan, bool calzone, bool gluten, string ingrediens, bool delivery)
+		public Pizza (int pizzaNo, string name, double price, bool vegan, bool calzone, bool gluten, string ingrediens, bool delivery, List<Extratopping> extraToppings)
 		{
 			_pizzaNo = pizzaNo;
 			_name = name;
@@ -43,6 +44,7 @@ namespace ClassLibPizza.Model
 			_gluten = gluten;
 			_ingrediens = ingrediens;
 			_delivery = delivery;
+			_extraToppings = extraToppings;
 		}
 		#endregion
 
@@ -51,7 +53,7 @@ namespace ClassLibPizza.Model
 		{
 			get { return _pizzaNo; }
 			set {
-				if (0 > value )
+				if (0 >= value )
 				{
 					throw new ArgumentException("number must be above one");
 				}
@@ -100,13 +102,71 @@ namespace ClassLibPizza.Model
 			get { return _delivery; }
 			set { _delivery = value; }
 		}
-		
-		#endregion
+		public List<Extratopping> ExtraToppings { get { return _extraToppings; } set { _extraToppings = value; }  }
 
-		#region methods()
-		public override string ToString()
+        #endregion
+
+        #region methods()
+
+        // Extra topping methods:
+        public void AddExtratopping(Extratopping extratopping)
+        {
+            _extraToppings.Add(extratopping);
+        }
+
+        public List<Extratopping> GetAllExtratoppings()
+        {
+            return new List<Extratopping>(_extraToppings);
+        }
+
+        public Extratopping Get(int extraToppingId)
+
+        {
+            Extratopping extratoppingfound = null;
+            foreach (Extratopping ToppingId in _extraToppings)
+            {
+                if (ToppingId.Id == extraToppingId)
+                {
+                    extratoppingfound = ToppingId;
+
+                }
+            }
+            if (extratoppingfound != null)
+            {
+                return extratoppingfound;
+            }
+            else
+            {
+                throw new Exception("Extratopping with ID: " + extraToppingId + "not found.");
+            }
+        }
+
+        public Extratopping Remove(int extraToppingId)
+        {
+            Extratopping removeExtratopping = Get(extraToppingId);
+            _extraToppings.Remove(removeExtratopping);
+            return removeExtratopping;
+        }
+
+        public Extratopping Update(int extraToppingId, Extratopping updatedExtratopping)
+        {
+            Extratopping updateExtratoppings = Get(extraToppingId);
+            updateExtratoppings.Name = updatedExtratopping.Name;
+            updateExtratoppings.Price = updatedExtratopping.Price;
+
+            return updateExtratoppings;
+
+        }
+
+
+        public override string ToString()
 		{
-			return "PizzaNo= " + PizzaNo + " Name= " + Name + " Price= " + Price + " Vegan= " + Vegan + " Calzone= " + Calzone + " Gluten= " + Gluten + " Ingridiens= " + Ingrediens + " Delivery= " + Delivery;
+			string str = string.Empty;
+			foreach (Extratopping t in _extraToppings)
+			{
+				str += t.ToString();
+			}
+			return "PizzaNo= " + PizzaNo + " Name= " + Name + " Price= " + Price + " Vegan= " + Vegan + " Calzone= " + Calzone + " Gluten= " + Gluten + " Ingridiens= " + Ingrediens + " Delivery= " + Delivery + " Extra toppings= " + str;
 		}
 		#endregion
 	}
