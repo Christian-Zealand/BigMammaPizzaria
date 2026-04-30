@@ -6,9 +6,6 @@ using System.Text;
 namespace ClassLibPizza.Model
 {
 	public class Extratopping
-
-
-
 	{
 		#region  Instancefields
 		//Instancefields

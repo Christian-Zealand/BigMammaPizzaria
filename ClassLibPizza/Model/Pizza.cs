@@ -103,7 +103,11 @@ namespace ClassLibPizza.Model
 			get { return _delivery; }
 			set { _delivery = value; }
 		}
-		public List<Extratopping> ExtraToppings { get { return _extraToppings; } set { _extraToppings = value; }  }
+		public List<Extratopping> ExtraToppings 
+		{ 
+			get { return _extraToppings; } 
+			set { _extraToppings = value; }  
+		}
 
         #endregion
 
