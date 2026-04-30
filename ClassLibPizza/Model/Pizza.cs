@@ -35,7 +35,7 @@ namespace ClassLibPizza.Model
 			
 		}
 
-		public Pizza (int pizzaNo, string name, double price, bool vegan, bool calzone, bool gluten, string ingrediens, bool delivery, List<Extratopping> extraToppings)
+		public Pizza (int pizzaNo, string name, double price, bool vegan, bool calzone, bool gluten, string ingrediens, bool delivery)
 		{
 			_pizzaNo = pizzaNo;
 			_name = name;
@@ -45,8 +45,8 @@ namespace ClassLibPizza.Model
 			_gluten = gluten;
 			_ingrediens = ingrediens;
 			_delivery = delivery;
-			_extraToppings = extraToppings;
-		}
+            _extraToppings = new List<Extratopping>();
+        }
 		#endregion
 
 		#region properties
@@ -159,6 +159,19 @@ namespace ClassLibPizza.Model
 
         }
 
+		public double Totalprice()
+		{
+			double totalprice = 0;
+
+			totalprice += _price;
+
+			foreach (Extratopping t in _extraToppings) 
+			{
+				totalprice += t.Price;
+			}
+			return totalprice;
+		}
+
 
         public override string ToString()
 		{
@@ -167,7 +180,8 @@ namespace ClassLibPizza.Model
 			{
 				str += t.ToString();
 			}
-			return "PizzaNo= " + PizzaNo + " Name= " + Name + " Price= " + Price + " Vegan= " + Vegan + " Calzone= " + Calzone + " Gluten= " + Gluten + " Ingridiens= " + Ingrediens + " Delivery= " + Delivery + " Extra toppings= " + str;
+			return "PizzaNo= " + PizzaNo + " Name= " + Name + " Price= " + Price + " Vegan= " + Vegan + " Calzone= " + Calzone +
+				" Gluten= " + Gluten + " Ingridiens= " + Ingrediens + " Delivery= " + Delivery + " Extra toppings= " + str;
 		}
 		#endregion
 	}

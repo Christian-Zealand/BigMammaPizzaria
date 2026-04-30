@@ -64,7 +64,7 @@ namespace ClassLibPizza.Model
 		//ToString:
 		public override string ToString()
 		{
-			return " Topping ID: " + Id + "Topping: " + Name + "Price: " + Price;
+			return "\n Topping ID: " + Id + " Topping: " + Name + " Price: " + Price;
 		}
 
 		#endregion
